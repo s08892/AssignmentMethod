@@ -2,66 +2,29 @@
 import java.util.Scanner;
 public class CalculateG {
 
-    public static double multiplication() {
-        Scanner multiplicationInput = new Scanner(System.in);
+    public static int multiplication(int num1,int num2) {
+
         // method for multiplication
-        int integer1;
-        int integer2;
-        int multi;
-        System.out.println("Multiplication Inputs");
-        System.out.println("Enter the first number: ");
-        integer1 = multiplicationInput.nextInt();
-        System.out.println("Enter second number");
-        integer2 = multiplicationInput.nextInt();
-        multi = integer1 * integer2;
-        System.out.println("Multiplication answer is:" + multi);
-
-
-        return 0;
+        return num1 * num2;
     }
 
-    public static double square() {
-        Scanner squareInput = new Scanner(System.in);
-        //method for square computation
-        int integer1;
-        int square;
-        System.out.println("Square Inputs");
-        System.out.println("Enter number");
-        integer1 = squareInput.nextInt();
-        square = integer1 * integer1;
-        System.out.println("Square answer is:" +square);
+    public static int square(double digit) {
 
 
-        return 0;
+
+        return (int) Math.pow(digit,2);
     }
 
-    public static double sum() {
-        Scanner multiInput = new Scanner(System.in);
-        // method for summation
-        int integer1;
-        int integer2;
-        int sum;
-        System.out.println("Summation Inputs");
-        System.out.println("Enter the first number: ");
-        integer1 = multiInput.nextInt();
-        System.out.println("Enter second number");
-        integer2 = multiInput.nextInt();
-        sum = integer1 + integer2;
-        System.out.println("Summation answer is:" +sum);
+    public static int summation(int integer1,int integer2) {
 
-
-        return 0;
+        return integer1+integer2;
     }
-    public static void outline() {
+    public static int outline(String message , double result) {
         // method for printing out a result
+        System.out.println(message + "" + result);
 
-
+        return (int) result;
     }
-
-
-
-
-
     public static void main(String[] args) {
         double gravity =-9.81; // Earth's gravity in m/s^2
         double fallingTime = 30;
@@ -69,6 +32,11 @@ public class CalculateG {
         double finalVelocity ;
         double initialPosition = 0.0;
         double finalPosition ;
+       int num1 = 5;
+        int num2 = 5;
+       int digit=25;
+       int integer1=15;
+       int integer2=75;
 // Add the formulas for position and velocity
         finalPosition = 0.5 * (gravity*(fallingTime*fallingTime)+ (initialVelocity*fallingTime)+initialPosition)
                               /fallingTime;
@@ -79,9 +47,14 @@ public class CalculateG {
         System.out.println("The object's velocity after " + fallingTime + " seconds is "
                 + finalVelocity + " m/s");
        //calling methods to print output on console
-        multiplication();
-        sum();
-        square();
+        int multiplicationResult = multiplication(num1,num2);
+        int squareResult = square(digit);
+        int summationResult = summation(integer1,integer2);
+
+        outline("Multiplication Answer:", multiplicationResult);
+        outline("Square Answer:", squareResult);
+        outline("Summation Answer:", summationResult);
+
 
     }
 }
